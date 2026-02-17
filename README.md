@@ -1,139 +1,128 @@
-# Demo Devops Python
+# 🚀 DevOps Technical Test – Django API
 
-This is a simple application to be used in the technical test of DevOps.
+This repository contains a simple Django REST API prepared for a DevOps technical test.
 
-## Getting Started
+It demonstrates:
 
-### Prerequisites
+- Docker containerization
+- CI/CD with GitHub Actions
+- Django REST Framework API
+- Basic DevOps best practices
 
-- Python 3.11.3
+---
 
-### Installation
+# 📌 Tech Stack
 
-Clone this repo.
+- Python 3.11
+- Django
+- Django REST Framework
+- Docker
+- GitHub Actions (CI/CD)
 
-```bash
-git clone https://bitbucket.org/devsu/demo-devops-python.git
+---
+
+# 📂 Project Structure
+
+```
+api/        -> Django app
+demo/       -> Django project settings
+Dockerfile  -> Container definition
+requirements.txt -> Dependencies
+.github/workflows -> CI/CD pipeline
 ```
 
-Install dependencies.
+---
+
+# ▶️ Run Locally (Without Docker)
+
+## 1. Clone repo
+
+```bash
+git clone https://github.com/L4l3y3nd4/devops-prueba-tecnica-erick.git
+cd devops-prueba-tecnica-erick
+```
+
+## 2. Create virtual environment
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+## 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Migrate database
+## 4. Apply migrations
 
 ```bash
-py manage.py makemigrations
-py manage.py migrate
+python manage.py migrate
 ```
 
-### Database
-
-The database is generated as a file in the main path when the project is first run, and its name is `db.sqlite3`.
-
-Consider giving access permissions to the file for proper functioning.
-
-## Usage
-
-To run tests you can use this command.
+## 5. Run server
 
 ```bash
-py manage.py test
+python manage.py runserver
 ```
 
-To run locally the project you can use this command.
+API available at:
+
+```
+http://127.0.0.1:8000/api/
+```
+
+---
+
+# 🐳 Run with Docker
+
+## Build image
 
 ```bash
-py manage.py runserver
+docker build -t django-devops-app .
 ```
 
-Open http://localhost:8000/api/ with your browser to see the result.
-
-### Features
-
-These services can perform,
-
-#### Create User
-
-To create a user, the endpoint **/api/users/** must be consumed with the following parameters:
+## Run container
 
 ```bash
-  Method: POST
+docker run -p 8000:8000 django-devops-app
 ```
 
-```json
-{
-    "dni": "dni",
-    "name": "name"
-}
+API available at:
+
+```
+http://localhost:8000/api/
 ```
 
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
+---
 
-```json
-{
-    "id": 1,
-    "dni": "dni",
-    "name": "name"
-}
-```
+# ⚙️ CI/CD Pipeline
 
-If the response is unsuccessful, we will receive status 400 and the following message:
+This project includes a GitHub Actions pipeline that:
 
-```json
-{
-    "detail": "error"
-}
-```
+- Installs Python dependencies
+- Validates project structure
+- Builds Docker image
+- Ensures application can start
 
-#### Get Users
+Pipeline runs automatically on push.
 
-To get all users, the endpoint **/api/users** must be consumed with the following parameters:
+Check status in the **Actions tab**.
 
-```bash
-  Method: GET
-```
+---
 
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
+# ✅ Features Demonstrated
 
-```json
-[
-    {
-        "id": 1,
-        "dni": "dni",
-        "name": "name"
-    }
-]
-```
+✔ Dockerized Django application  
+✔ CI/CD with GitHub Actions  
+✔ Clean repository practices (.gitignore)  
+✔ REST API with Django REST Framework  
+✔ DevOps-ready structure  
 
-#### Get User
+---
 
-To get an user, the endpoint **/api/users/<id>** must be consumed with the following parameters:
+# 📌 Author
 
-```bash
-  Method: GET
-```
-
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
-
-```json
-{
-    "id": 1,
-    "dni": "dni",
-    "name": "name"
-}
-```
-
-If the user id does not exist, we will receive status 404 and the following message:
-
-```json
-{
-    "detail": "Not found."
-}
-```
-
-## License
-
-Copyright © 2023 Devsu. All rights reserved.
+Erick  
+DevOps Engineer Candidate 🚀
