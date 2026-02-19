@@ -138,5 +138,5 @@ jobs:
 
       - name: Verify deployment
         run: |
-          kubectl get pods -n demo-devops
-          kubectl get svc -n demo-devops
+          kubectl get pods 
+          kubectl get svc 
