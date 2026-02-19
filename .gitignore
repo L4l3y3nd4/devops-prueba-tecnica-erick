@@ -1,6 +1,24 @@
-*.log
-*.pot
-*.pyc
+# Python
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
 
-db.sqlite3
+# Env
+.env
+
+# Virtualenv
+venv/
+.env/
+
+# Docker
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
