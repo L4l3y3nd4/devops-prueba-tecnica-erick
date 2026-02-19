@@ -12,4 +12,9 @@ COPY . .
 
 EXPOSE 8000
 
+RUN useradd -m appuser
+USER appuser
+
+HEALTHCHECK CMD curl --fail http://localhost:8000/api/ || exit 1
+
 CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]

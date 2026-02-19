@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: demo-app
-          image: devsu-demo-app:latest
+          image: l4l3y3nd4/devsu-demo-app:IMAGE_TAG
           imagePullPolicy: IfNotPresent
 
           ports:
