@@ -72,11 +72,11 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/devsu-demo-app:${{ github.sha }} .
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/devsu-demo-app:${{ github.sha }} .
 
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/devsu-demo-app:${{ github.sha }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/devsu-demo-app:${{ github.sha }}
 
   ############################
   # SECURITY SCAN        #
