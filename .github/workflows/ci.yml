@@ -56,9 +56,6 @@ jobs:
   ############################
   # DOCKER BUILD + PUSH  #
   ############################
-  ############################
-  # DOCKER BUILD + PUSH  #
-  ############################
   docker-build:
     needs: test-and-quality
     runs-on: ubuntu-latest
