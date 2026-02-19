@@ -28,3 +28,4 @@ class TestUserView(APITestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(json.loads(response.content),
                          {"id": 1, "name": "Test1", "dni": "09876543210"})
+                         
