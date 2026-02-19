@@ -134,9 +134,7 @@ jobs:
         run: |
           kubectl apply -f k8s/
 
-      - name: Wait for pods
-        run: |
-          kubectl wait --for=condition=available deployment/demo-app --timeout=600s -n demo-devops
+
 
       - name: Verify deployment
         run: |
